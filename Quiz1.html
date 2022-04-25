@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multiplication Table</title>
+    <style>
+        table{
+            border: 1px solid ;
+            border-collapse: collapse;
+            }
+            td{
+                text-align: center;
+                border: 2px solid;
+                padding: 10px;
+                font-size: large;
+                width: 2em;
+            }
+    </style>
+</head>
+<body>
+    <main>
+       
+        <table >
+        
+           
+        <script>
+            "use strict";
+            // variable to populate the cells of the table
+            // initially set to x for first cell
+            var result = 'x';
+          
+            // loop to create rows 
+            for (let rows = 0; rows <= 10; rows++){
+               
+                document.write("<tr>");
+                   
+            // loop to create columns
+            for (let columns = 0; columns <= 10; columns++) {
+
+            // creates all of the columns to the right starting at 1     
+                if (rows == 0 && columns > 0){
+                    result = columns;   
+                    document.write('<td style="font-weight:bold">','<font color = blue>' + result + '</font>' ,"</td>");     
+                }
+            // creates all of the rows going down starting at 1
+                else if (columns == 0 && rows > 0){
+                result = rows;
+                document.write('<td style="font-weight:bold">','<font color = red>' + result + '</font>' ,"</td>");
+                }
+
+            // targets the perfect square diagonal to color it green   
+                else if (columns>0 && rows>0 && columns == rows){
+                    result = columns * rows;
+                    document.write('<td style="font-weight:bold">','<font color = green>' + result + '</font>' ,"</td>");
+                }
+            // fills in the rest of the table     
+                else if (columns > 0 && rows > 0){
+                    result = columns*rows;
+                    document.write('<td>','<font color = black>' + result + '</font>' ,"</td>");
+                }
+            // colors the original value of result to pink    
+                else {
+                    document.write('<td style="font-weight:bold">','<font color = #ff70ff>' + result + '</font>' ,"</td>");
+                }
+              
+               
+            }
+
+            document.write("</tr>");
+            
+         }   
+        
+        </script>    
+         </table>
+    </main>
+</body>
+</html>
